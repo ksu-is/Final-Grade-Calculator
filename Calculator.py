@@ -1,4 +1,3 @@
-
 def quizzes():
     while True:
         quiz_weight=input('How much does your quizzes weigh? or if not applicable type n/a ')
@@ -16,12 +15,13 @@ def quizzes():
                 elif quiz_amount.isalpha():
                     print('Please use an integer')
                 else:
-                    while True:
-                        quiz_scores=input('Please insert all your quizz scores, and once finished press "F" ')
-                        if quiz_scores=='F':
-                            Menu()
-                        elif quiz_scores.isdigit==False:
-                            print('Please use integer')
+                    quiz_value=[]
+                    for n in range(int(quiz_amount)):
+                        quiz_scores=int(input('Please add all scores'))
+                        quiz_value.append(quiz_scores)
+                    print(quiz_value)
+
+
 
 def Menu():
     print("Hello, welcome to the Will I fail Calculator")
@@ -31,4 +31,3 @@ def Menu():
         quizzes()
 
 Menu()
-
