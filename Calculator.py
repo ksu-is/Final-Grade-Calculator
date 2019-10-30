@@ -71,6 +71,30 @@ def assignments():
                     assignment_final=assignment_total/int(assignment_amount)
                     print('Your assignment grades are worth',assignment_final,'%', 'of your grade')
                     Menu()
+def homework():
+    while True:
+        homework_weight=input('How much does your homework weigh? or if not applicable type n/a ')
+        if homework_weight.isdigit():
+            print('Please use a decimal')
+        elif homework_weight.isalpha():
+            print('Please use a decimal')
+        elif homework_weight=='n/a':
+            Menu()
+        else:
+            while True:
+                homework_amount=input('How many quizzes have you taken? ')
+                if homework_amount.isdigit()==False:
+                    print('Please use a integer')
+                else:
+                    homework_value=[]
+                    for scores in range(int(homework_amount)):
+                        homework_scores=int(input('Please insert scores one at a time '))
+                        homework_value.append(homework_scores)
+                    homework_total=sum(homework_value)
+                    homework_final=homework_total/int(homework_amount)
+                    homework_end=int(homework_final)*homework_weight
+                    print('Your homework grades are worth',homework_weight,'%', 'of your grade')
+                    Menu()
 
 def Menu():
     print("Hello, welcome to the Will I fail Calculator")
