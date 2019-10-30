@@ -25,7 +25,28 @@ def quizzes():
                     Menu()
                 
 def Test():
-    
+    while True:
+        test_weight=input('How much does your Test weigh? or if not applicable type n/a ')
+        if test_weight.isdigit():
+            print('Please use a decimal')
+        elif test_weight.isalpha():
+            print('Please use a decimal')
+        elif test_weight=='n/a':
+            Menu()
+        else:
+            while True:
+                test_amount=input('How many quizzes have you taken? ')
+                if test_amount.isdigit()==False:
+                    print('Please use a integer')
+                else:
+                    test_value=[]
+                    for scores in range(int(test_amount)):
+                        test_scores=int(input('Please insert scores one at a time '))
+                        test_value.append(test_scores)
+                    test_total=sum(test_value)
+                    test_final=test_total/int(test_amount)
+                    print('Your test grades are worth',test_final,'%', 'of your grade')
+                    Menu()
 
 
 
