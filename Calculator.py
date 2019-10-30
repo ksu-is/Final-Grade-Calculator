@@ -16,10 +16,16 @@ def quizzes():
                     print('Please use an integer')
                 else:
                     quiz_value=[]
-                    for n in range(int(quiz_amount)):
-                        quiz_scores=int(input('Please add all scores'))
+                    for scores in range(int(quiz_amount)):
+                        quiz_scores=int(input('Please insert scores one at a time '))
                         quiz_value.append(quiz_scores)
-                    print(quiz_value)
+                    quiz_total=sum(quiz_value)
+                    quiz_final=quiz_total/int(quiz_amount)
+                    print('Your quizzes are worth',quiz_final,'%', 'of your grade')
+                    Menu()
+                
+def Test():
+    
 
 
 
@@ -29,5 +35,8 @@ def Menu():
     Grader=input('Press \n 1 grade quizzes \n 2 grade test \n 3 grade assignments \n 4 grade homework \n 5 for other \n 6 for final grade \n ')
     if Grader=='1':
         quizzes()
+    elif Grader=='2':
+        Test()
+
 
 Menu()
