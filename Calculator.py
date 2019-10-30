@@ -69,7 +69,8 @@ def assignments():
                         assignment_value.append(assignment_scores)
                     assignment_total=sum(assignment_value)
                     assignment_final=assignment_total/int(assignment_amount)
-                    print('Your assignment grades are worth',assignment_final,'%', 'of your grade')
+                    assignment_end=int(assignment_final/float(assignment_weight))
+                    print('Your assignment grades are worth',assignment_end,'%', 'of your grade')
                     Menu()
 def homework():
     while True:
@@ -92,8 +93,8 @@ def homework():
                         homework_value.append(homework_scores)
                     homework_total=sum(homework_value)
                     homework_final=homework_total/int(homework_amount)
-                    homework_end=int(homework_final)*homework_weight
-                    print('Your homework grades are worth',homework_weight,'%', 'of your grade')
+                    homework_end=int(homework_final)*float(homework_weight)
+                    print('Your homework grades are worth',homework_end,'%', 'of your grade')
                     Menu()
 
 def Menu():
