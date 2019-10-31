@@ -21,7 +21,8 @@ def quizzes():
                         quiz_value.append(quiz_scores)
                     quiz_total=sum(quiz_value)
                     quiz_final=quiz_total/int(quiz_amount)
-                    print('Your quizzes are worth',quiz_final,'%', 'of your grade')
+                    quiz_end= int(quiz_final)*float(quiz_weight)
+                    print('Your quizzes are worth',quiz_end,'%', 'of your grade')
                     Menu()
                 
 def Test():
@@ -35,7 +36,7 @@ def Test():
             Menu()
         else:
             while True:
-                test_amount=input('How many quizzes have you taken? ')
+                test_amount=input('How many test have you taken? ')
                 if test_amount.isdigit()==False:
                     print('Please use a integer')
                 else:
@@ -45,7 +46,8 @@ def Test():
                         test_value.append(test_scores)
                     test_total=sum(test_value)
                     test_final=test_total/int(test_amount)
-                    print('Your test grades are worth',test_final,'%', 'of your grade')
+                    test_end=int(test_final)*float(test_weight)
+                    print('Your test grades are worth',test_end,'%', 'of your grade')
                     Menu()
 
 def assignments():
@@ -59,7 +61,7 @@ def assignments():
             Menu()
         else:
             while True:
-                assignment_amount=input('How many quizzes have you taken? ')
+                assignment_amount=input('How many assignments have you done? ')
                 if assignment_amount.isdigit()==False:
                     print('Please use a integer')
                 else:
@@ -69,7 +71,7 @@ def assignments():
                         assignment_value.append(assignment_scores)
                     assignment_total=sum(assignment_value)
                     assignment_final=assignment_total/int(assignment_amount)
-                    assignment_end=int(assignment_final/float(assignment_weight))
+                    assignment_end=int(assignment_final*float(assignment_weight))
                     print('Your assignment grades are worth',assignment_end,'%', 'of your grade')
                     Menu()
 def homework():
@@ -83,7 +85,7 @@ def homework():
             Menu()
         else:
             while True:
-                homework_amount=input('How many quizzes have you taken? ')
+                homework_amount=input('How much homework have you done? ')
                 if homework_amount.isdigit()==False:
                     print('Please use a integer')
                 else:
@@ -95,6 +97,31 @@ def homework():
                     homework_final=homework_total/int(homework_amount)
                     homework_end=int(homework_final)*float(homework_weight)
                     print('Your homework grades are worth',homework_end,'%', 'of your grade')
+                    Menu()
+def custom():
+    questc=input('What is this category called')
+    while True:
+        custom_weight=input('How much does',questc, 'weigh? or if not applicable type n/a ')
+        if custom_weight.isdigit():
+            print('Please use a decimal')
+        elif custom_weight.isalpha():
+            print('Please use a decimal')
+        elif custom_weight=='n/a':
+            Menu()
+        else:
+            while True:
+                custom_amount=input('How many',questc, 'are there? ')
+                if custom_amount.isdigit()==False:
+                    print('Please use a integer')
+                else:
+                    custom_value=[]
+                    for scores in range(int(custom_amount)):
+                        custom_scores=int(input('Please insert scores one at a time '))
+                        custom_value.append(custom_scores)
+                    custom_total=sum(custom_value)
+                    custom_final=custom_total/int(custom_amount)
+                    custom_end=int(custom_final)*float(custom_weight)
+                    print('Your',questc, 'grades are worth',custom_end,'%', 'of your grade')
                     Menu()
 
 def Menu():
