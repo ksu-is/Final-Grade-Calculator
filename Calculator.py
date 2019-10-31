@@ -1,4 +1,8 @@
 custom_end=''
+homework_end=''
+assignment_end=''
+test_end=''
+quiz_end=''
 def quizzes():
     while True:
         quiz_weight=input('How much does your quizzes weigh? or if not applicable type n/a ')
@@ -22,6 +26,7 @@ def quizzes():
                         quiz_value.append(quiz_scores)
                     quiz_total=sum(quiz_value)
                     quiz_final=quiz_total/int(quiz_amount)
+                    global quiz_end
                     quiz_end= int(quiz_final)*float(quiz_weight)
                     print('Your quizzes are worth',quiz_end,'%', 'of your grade')
                     Menu()
@@ -47,6 +52,7 @@ def Test():
                         test_value.append(test_scores)
                     test_total=sum(test_value)
                     test_final=test_total/int(test_amount)
+                    global test_end
                     test_end=int(test_final)*float(test_weight)
                     print('Your test grades are worth',test_end,'%', 'of your grade')
                     Menu()
@@ -72,6 +78,7 @@ def assignments():
                         assignment_value.append(assignment_scores)
                     assignment_total=sum(assignment_value)
                     assignment_final=assignment_total/int(assignment_amount)
+                    global assignment_end
                     assignment_end=int(assignment_final*float(assignment_weight))
                     print('Your assignment grades are worth',assignment_end,'%', 'of your grade')
                     Menu()
@@ -96,6 +103,7 @@ def homework():
                         homework_value.append(homework_scores)
                     homework_total=sum(homework_value)
                     homework_final=homework_total/int(homework_amount)
+                    global homework_end
                     homework_end=int(homework_final)*float(homework_weight)
                     print('Your homework grades are worth',homework_end,'%', 'of your grade')
                     return homework_end
@@ -128,8 +136,11 @@ def custom():
                     Menu()
 
 def final():
-    if custom_end>1:
-        print('hi')
+    if custom_end=="":
+       pass
+    elif custom_end>1:
+        
+    Menu()
 def Menu():
     print("Hello, welcome to the Will I fail Calculator")
     print('Please Choose a category to start with')
