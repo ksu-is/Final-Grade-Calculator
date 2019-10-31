@@ -1,3 +1,4 @@
+custom_end=''
 def quizzes():
     while True:
         quiz_weight=input('How much does your quizzes weigh? or if not applicable type n/a ')
@@ -97,11 +98,12 @@ def homework():
                     homework_final=homework_total/int(homework_amount)
                     homework_end=int(homework_final)*float(homework_weight)
                     print('Your homework grades are worth',homework_end,'%', 'of your grade')
+                    return homework_end
                     Menu()
 def custom():
     questc=input('What is this category called')
     while True:
-        custom_weight=input('How much does',questc, 'weigh? or if not applicable type n/a ')
+        custom_weight=input('How much does' 'weigh? or if not applicable type n/a ')
         if custom_weight.isdigit():
             print('Please use a decimal')
         elif custom_weight.isalpha():
@@ -110,7 +112,7 @@ def custom():
             Menu()
         else:
             while True:
-                custom_amount=input('How many',questc, 'are there? ')
+                custom_amount=input('How many' 'are there? ')
                 if custom_amount.isdigit()==False:
                     print('Please use a integer')
                 else:
@@ -120,10 +122,14 @@ def custom():
                         custom_value.append(custom_scores)
                     custom_total=sum(custom_value)
                     custom_final=custom_total/int(custom_amount)
+                    global custom_end
                     custom_end=int(custom_final)*float(custom_weight)
-                    print('Your',questc, 'grades are worth',custom_end,'%', 'of your grade')
+                    print('Your' 'grades are worth',custom_end,'%', 'of your grade')
                     Menu()
 
+def final():
+    if custom_end>1:
+        print('hi')
 def Menu():
     print("Hello, welcome to the Will I fail Calculator")
     print('Please Choose a category to start with')
@@ -143,6 +149,7 @@ def Menu():
     else:
         print('that is not one of the options')
         Menu()
+
 
 
 Menu()
