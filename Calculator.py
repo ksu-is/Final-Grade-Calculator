@@ -42,6 +42,7 @@ def Test():
             Menu()
         else:
             while True:
+                test_amount=input('How many quizzes have you taken? ')
                 test_amount=input('How many test have you taken? ')
                 if test_amount.isdigit()==False:
                     print('Please use a integer')
@@ -104,6 +105,8 @@ def homework():
                     homework_total=sum(homework_value)
                     homework_final=homework_total/int(homework_amount)
                     global homework_end
+                    homework_end=int(homework_final)*homework_weight
+                    print('Your homework grades are worth',homework_end,'%', 'of your grade')
                     homework_end=int(homework_final)*float(homework_weight)
                     print('Your homework grades are worth',homework_end,'%', 'of your grade')
                     return homework_end
@@ -135,10 +138,18 @@ def custom():
                     print('Your' 'grades are worth',custom_end,'%', 'of your grade')
                     Menu()
 
+if custom_end=="":
+        custom_end=0
+elif custom_end>1:
+        custom_end=custom_end
+if homework_end=='':
+    homework_end=0
+elif homework_end>1:
+    homework_end=homework_end
+    
 def final():
-    if custom_end=="":
-       pass
-    elif custom_end>1:
+    print(custom_end+homework_end)
+
         
     Menu()
 def Menu():
@@ -160,7 +171,6 @@ def Menu():
     else:
         print('that is not one of the options')
         Menu()
-
 
 
 Menu()
