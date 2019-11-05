@@ -1,3 +1,4 @@
+#These variables are needed to make local variables in functions global
 custom_end=''
 homework_end=''
 assignment_end=''
@@ -23,11 +24,16 @@ def quizzes():
                     for scores in range(int(quiz_amount)):
                         quiz_scores=int(input('Please insert scores one at a time '))
                         quiz_value.append(quiz_scores)
+#This allows the user to input grades and have the iterrated and added to a list for future reference
                     quiz_weighp=int(quiz_weight)/100
+# Quiz_weighp converts the category weight from an integer to a float
                     quiz_total=sum(quiz_value)
+# Adds all the inputted quiz grades
                     quiz_final=quiz_total/int(quiz_amount)
+# Divides the sum of all the quiz grades by the amount resulting in the final grade for the category excluding its weight
                     global quiz_end
                     quiz_end=int(quiz_final)*float(quiz_weighp)
+#  Multiplies the final grade of the cateogry to corresponding weight to output how much this category affects the final grade
                     print('Your quizzes are worth',quiz_end,'%', 'of your grade')
                     Menu()
                 
@@ -106,7 +112,7 @@ def homework():
                     return homework_end
                     Menu()
 def custom():
-    questc=input('What is this category called')
+    #questc=input('What is this category called')
     while True:
         custom_weight=input('How much does' 'weigh? or if not applicable type n/a ')
         if custom_weight.isdigit():
@@ -156,15 +162,13 @@ if final_end=='':
     final_end=0
 elif final_end>-1:
     final_end=final_end
-
-    
+# The code above allows the function final grade to determine which categories to use. If the user did not insert any grade in a category, it will default to a 0    
 def final():
     global final_end
     final_end=custom_end+homework_end+test_end+assignment_end+quiz_end+homework_end
     print( 'Your final Grade is',final_end,'%')
-
-        
     Menu()
+
 def Menu():
     print("Hello, welcome to the Will I fail Calculator")
     print('1 Grade Quizzes Current grade is',quiz_end,'%')
@@ -173,7 +177,8 @@ def Menu():
     print('4 Grade homework Current grade is',homework_end,'%')
     print('5 Grade custom Current grade is',custom_end,'%')
     print('6 Calculate Final Grade (all other pertaining grades have to be filled before hand) Current final grade is', final_end,'%')
-    Grader=input('Please Choose a category to start with')
+    print('7 Close program')
+    Grader=input('Please Choose a category to start with by entering any of the following numbers ')
     if Grader=='1':
         quizzes()
     elif Grader=='2':
@@ -186,6 +191,8 @@ def Menu():
         custom()
     elif Grader=='6':
         final()
+    elif Grader=='7':
+        exit
     else:
         print('that is not one of the options')
         Menu()
