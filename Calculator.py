@@ -42,7 +42,6 @@ def Test():
             Menu()
         else:
             while True:
-                test_amount=input('How many quizzes have you taken? ')
                 test_amount=input('How many test have you taken? ')
                 if test_amount.isdigit()==False:
                     print('Please use a integer')
@@ -140,12 +139,25 @@ def custom():
 
 if custom_end=="":
         custom_end=0
-elif custom_end>1:
+elif custom_end>-1:
         custom_end=custom_end
 if homework_end=='':
     homework_end=0
-elif homework_end>1:
+elif homework_end>-1:
     homework_end=homework_end
+if test_end=='':
+    test_end=0
+elif test_end=='':
+    test_end=test_end
+if quiz_end=="":
+    quiz_end=0
+elif quiz_end>-1:
+    quiz_end=quiz_end
+if assignment_end=='':
+    assignment_end=0
+elif assignment_end>-1:
+    assignment_end=assignment_end
+
     
 def final():
     print(custom_end+homework_end)
