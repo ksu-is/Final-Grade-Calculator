@@ -6,10 +6,8 @@ quiz_end=''
 def quizzes():
     while True:
         quiz_weight=input('How much does your quizzes weigh? or if not applicable type n/a ')
-        if quiz_weight.isdigit():
-            print('Please use a decimal')
-        elif quiz_weight.isalpha():
-            print('Please use a decimal')
+        if quiz_weight.isdigit()==False:
+            print('Please use a integer')
         elif quiz_weight=='n/a':
             Menu()
         else:
@@ -24,10 +22,11 @@ def quizzes():
                     for scores in range(int(quiz_amount)):
                         quiz_scores=int(input('Please insert scores one at a time '))
                         quiz_value.append(quiz_scores)
+                    quiz_weighp=int(quiz_weight)/100
                     quiz_total=sum(quiz_value)
                     quiz_final=quiz_total/int(quiz_amount)
                     global quiz_end
-                    quiz_end= int(quiz_final)*float(quiz_weight)
+                    quiz_end=int(quiz_final)*float(quiz_weighp)
                     print('Your quizzes are worth',quiz_end,'%', 'of your grade')
                     Menu()
                 
@@ -160,7 +159,7 @@ elif assignment_end>-1:
 
     
 def final():
-    print(custom_end+homework_end)
+    print( 'Your final Grade is',custom_end+homework_end+test_end+assignment_end+quiz_end+homework_end,'%')
 
         
     Menu()
