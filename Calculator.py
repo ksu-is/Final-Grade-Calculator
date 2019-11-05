@@ -3,6 +3,7 @@ homework_end=''
 assignment_end=''
 test_end=''
 quiz_end=''
+final_end=''
 def quizzes():
     while True:
         quiz_weight=input('How much does your quizzes weigh? or if not applicable type n/a ')
@@ -33,10 +34,8 @@ def quizzes():
 def Test():
     while True:
         test_weight=input('How much does your Test weigh? or if not applicable type n/a ')
-        if test_weight.isdigit():
-            print('Please use a decimal')
-        elif test_weight.isalpha():
-            print('Please use a decimal')
+        if test_weight.isdigit()==False:
+            print('Please use a integer')
         elif test_weight=='n/a':
             Menu()
         else:
@@ -49,20 +48,19 @@ def Test():
                     for scores in range(int(test_amount)):
                         test_scores=int(input('Please insert scores one at a time '))
                         test_value.append(test_scores)
+                    test_weighp=int(test_weight)/100
                     test_total=sum(test_value)
                     test_final=test_total/int(test_amount)
                     global test_end
-                    test_end=int(test_final)*float(test_weight)
+                    test_end=int(test_final)*float(test_weighp)
                     print('Your test grades are worth',test_end,'%', 'of your grade')
                     Menu()
 
 def assignments():
     while True:
         assignment_weight=input('How much does your assignments weigh? or if not applicable type n/a ')
-        if assignment_weight.isdigit():
-            print('Please use a decimal')
-        elif assignment_weight.isalpha():
-            print('Please use a decimal')
+        if assignment_weight.isdigit()==False:
+            print('Please use a integer')
         elif assignment_weight=='n/a':
             Menu()
         else:
@@ -75,19 +73,18 @@ def assignments():
                     for scores in range(int(assignment_amount)):
                         assignment_scores=int(input('Please insert scores one at a time '))
                         assignment_value.append(assignment_scores)
+                    assignment_weighp=int(assignment_weight)/100
                     assignment_total=sum(assignment_value)
                     assignment_final=assignment_total/int(assignment_amount)
                     global assignment_end
-                    assignment_end=int(assignment_final*float(assignment_weight))
+                    assignment_end=int(assignment_final)*float(assignment_weighp)
                     print('Your assignment grades are worth',assignment_end,'%', 'of your grade')
                     Menu()
 def homework():
     while True:
         homework_weight=input('How much does your homework weigh? or if not applicable type n/a ')
-        if homework_weight.isdigit():
-            print('Please use a decimal')
-        elif homework_weight.isalpha():
-            print('Please use a decimal')
+        if homework_weight.isdigit()==False:
+            print('Please use a integer')
         elif homework_weight=='n/a':
             Menu()
         else:
@@ -100,12 +97,11 @@ def homework():
                     for scores in range(int(homework_amount)):
                         homework_scores=int(input('Please insert scores one at a time '))
                         homework_value.append(homework_scores)
+                    homework_weighp=int(homework_weight)/100
                     homework_total=sum(homework_value)
                     homework_final=homework_total/int(homework_amount)
                     global homework_end
-                    homework_end=int(homework_final)*homework_weight
-                    print('Your homework grades are worth',homework_end,'%', 'of your grade')
-                    homework_end=int(homework_final)*float(homework_weight)
+                    homework_end=int(homework_final)*float(homework_weighp)
                     print('Your homework grades are worth',homework_end,'%', 'of your grade')
                     return homework_end
                     Menu()
@@ -156,17 +152,28 @@ if assignment_end=='':
     assignment_end=0
 elif assignment_end>-1:
     assignment_end=assignment_end
+if final_end=='':
+    final_end=0
+elif final_end>-1:
+    final_end=final_end
 
     
 def final():
-    print( 'Your final Grade is',custom_end+homework_end+test_end+assignment_end+quiz_end+homework_end,'%')
+    global final_end
+    final_end=custom_end+homework_end+test_end+assignment_end+quiz_end+homework_end
+    print( 'Your final Grade is',final_end,'%')
 
         
     Menu()
 def Menu():
     print("Hello, welcome to the Will I fail Calculator")
-    print('Please Choose a category to start with')
-    Grader=input('Press \n 1 Grade quizzes \n 2 Grade test \n 3 Grade assignments \n 4 Grade homework \n 5 Grade Custom Category \n 6 for final grade (Must have all pertainig grades calculated before use) \n ')
+    print('1 Grade Quizzes Current grade is',quiz_end,'%')
+    print('2 Grade Test Current grade is',test_end,'%')
+    print('3 Grade assignments Current grade is',assignment_end,'%')
+    print('4 Grade homework Current grade is',homework_end,'%')
+    print('5 Grade custom Current grade is',custom_end,'%')
+    print('6 Calculate Final Grade (all other pertaining grades have to be filled before hand) Current final grade is', final_end,'%')
+    Grader=input('Please Choose a category to start with')
     if Grader=='1':
         quizzes()
     elif Grader=='2':
