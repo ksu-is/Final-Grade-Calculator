@@ -8,10 +8,10 @@ final_end=''
 def quizzes():
     while True:
         quiz_weight=input('How much does your quizzes weigh? or if not applicable type n/a ')
-        if quiz_weight.isdigit()==False:
-            print('Please use a integer')
-        elif quiz_weight=='n/a':
+        if quiz_weight=='n/a':
             Menu()
+        elif quiz_weight.isdigit()==False:
+            print('Please use a integer')
         else:
             while True:
                 quiz_amount=input('How many quizzes have you taken? ')
@@ -40,10 +40,10 @@ def quizzes():
 def Test():
     while True:
         test_weight=input('How much does your Test weigh? or if not applicable type n/a ')
-        if test_weight.isdigit()==False:
-            print('Please use a integer')
-        elif test_weight=='n/a':
+        if test_weight=='n/a':
             Menu()
+        elif test_weight.isdigit()==False:
+            print('Please use a integer')
         else:
             while True:
                 test_amount=input('How many test have you taken? ')
@@ -65,10 +65,10 @@ def Test():
 def assignments():
     while True:
         assignment_weight=input('How much does your assignments weigh? or if not applicable type n/a ')
-        if assignment_weight.isdigit()==False:
-            print('Please use a integer')
-        elif assignment_weight=='n/a':
+        if assignment_weight=='n/a':
             Menu()
+        elif assignment_weight.isdigit()==False:
+            print('Please use a integer')
         else:
             while True:
                 assignment_amount=input('How many assignments have you done? ')
@@ -89,10 +89,10 @@ def assignments():
 def homework():
     while True:
         homework_weight=input('How much does your homework weigh? or if not applicable type n/a ')
-        if homework_weight.isdigit()==False:
-            print('Please use a integer')
-        elif homework_weight=='n/a':
+        if homework_weight=='n/a':
             Menu()
+        elif homework_weight.isdigit()==False:
+            print('Please use a integer')
         else:
             while True:
                 homework_amount=input('How much homework have you done? ')
