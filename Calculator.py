@@ -124,11 +124,22 @@ def custom():
             for numbers in range(int(custom_amount)):
                 def customs(name,weight,amount):
                     print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
-                customs(input('please provide the name'),input('the weight'),input('amount'))
-                for numbers in range(int(amount)):
-                    scores=input('please provide your scores for this category')
+                    for numbers in range(int(amount)):
+                        scores=int(input('please provide your scores for this category'))
                     custom_scores.append(scores)
-                    
+                    weigh_percentage=int(weight)/100
+                    custom_totalgrades=sum(custom_scores)
+                    custom_final=custom_totalgrades/int(amount)
+                    custom_endd=int(custom_final)*float(weigh_percentage)
+                    custom_list.append(custom_endd)
+            
+                customs(input('please provide the name '),input('the weight '),input('amount '))
+                print(custom_list)
+                global custom_end
+                custom_end=sum(custom_list)
+                Menu()
+               
+
 
        
 if custom_end=="":
