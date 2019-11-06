@@ -114,6 +114,9 @@ def custom():
     custom_list=[]
     custom_scores=[]
     global custom_end
+    custom_end=sum(custom_list)
+    counter=0
+
     def customs(name,weight,amount):
         print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
         for numbers in range(int(amount)):
@@ -124,6 +127,7 @@ def custom():
         custom_final=custom_totalgrades/int(amount)
         custom_endd=int(custom_final)*float(weigh_percentage)
         custom_list.append(custom_endd)
+
     while True:
         custom_amount=input('How many custom categories would you like to add? or enter n/a to return to menu ')
         if custom_amount=='n/a':
@@ -131,6 +135,7 @@ def custom():
         elif custom_amount.isalpha()==True:
             print('Please use a integer or decimal ')
         else:
+            counter+=1
             for numbers in range(int(custom_amount)):
                 custom_name=input('Please provide a name for the category')
                 if custom_name.isdigit()==True:
@@ -147,6 +152,8 @@ def custom():
                             customs(custom_name,custom_weight,number_custom_grades)
                             print(custom_list)
                             custom_end=sum(custom_list)
+                            while counter==int(custom_amount):
+                                Menu()
                             
                                            
     
