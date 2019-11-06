@@ -112,32 +112,20 @@ def homework():
                     return homework_end
                     Menu()
 def custom():
-    #questc=input('What is this category called')
+    custom_list=[]
     while True:
-        custom_weight=input('How much does' 'weigh? or if not applicable type n/a ')
-        if custom_weight.isdigit():
-            print('Please use a decimal')
-        elif custom_weight.isalpha():
-            print('Please use a decimal')
-        elif custom_weight=='n/a':
+        custom_amount=input('How many custom categories would you like to add? ')
+        if custom_amount=='n/a':
             Menu()
+        elif custom_amount.isalpha()==True:
+            print('Please use a integer or decimal')
         else:
-            while True:
-                custom_amount=input('How many' 'are there? ')
-                if custom_amount.isdigit()==False:
-                    print('Please use a integer')
-                else:
-                    custom_value=[]
-                    for scores in range(int(custom_amount)):
-                        custom_scores=int(input('Please insert scores one at a time '))
-                        custom_value.append(custom_scores)
-                    custom_total=sum(custom_value)
-                    custom_final=custom_total/int(custom_amount)
-                    global custom_end
-                    custom_end=int(custom_final)*float(custom_weight)
-                    print('Your' 'grades are worth',custom_end,'%', 'of your grade')
-                    Menu()
+            for numbers in range(int(custom_amount)):
+                custom_name=input('Please enter the name of your categories one at a time and hit enter after each response ')
+                custom_list.append(custom_name)
+                
 
+        
 if custom_end=="":
         custom_end=0
 elif custom_end>-1:
