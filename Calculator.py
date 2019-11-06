@@ -113,6 +113,7 @@ def homework():
 def custom():
     custom_list=[]
     custom_scores=[]
+    global custom_end
     def customs(name,weight,amount):
         print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
         for numbers in range(int(amount)):
@@ -136,23 +137,19 @@ def custom():
                     print("Please use letters only")
                 else:
                     custom_weight=input('Enter the weight of this category ')
-                    if custom_weight.isalpha==True:
+                    if custom_weight.isalpha()==True:
                         print('Please use an integer')
                     else:
                         number_custom_grades=input('Please provide the number assignments completed for this category ')
                         if number_custom_grades.isalpha()==True:
                             print('Please use an integer')
                         else:
-                            for numbers in range(int(number_custom_grades)):
-                                customs(custom_name,custom_weight,number_custom_grades)
-                                
-                                  
+                            customs(custom_name,custom_weight,number_custom_grades)
+                            print(custom_list)
+                            custom_end=sum(custom_list)
+                            
+                                           
     
-                
-    print(custom_list) 
-    global custom_end
-    custom_end=sum(custom_list)
-    Menu()
                
 
 
