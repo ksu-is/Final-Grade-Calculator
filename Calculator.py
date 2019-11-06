@@ -115,13 +115,30 @@ def custom():
     custom_list=[]
     custom_scores=[]
     while True:
-        custom_amount=input('How many custom categories would you like to add? ')
+        custom_amount=input('How many custom categories would you like to add? or enter n/a to return to menu ')
         if custom_amount=='n/a':
             Menu()
         elif custom_amount.isalpha()==True:
             print('Please use a integer or decimal')
         else:
             for numbers in range(int(custom_amount)):
+                custom_name=input('Please provide a name for the category')
+                if custom_name.isdigit()==True:
+                    print("Please use letters only")
+                else:
+                    custom_weight=input('Enter the weight of this category')
+                    if custom_weight.isalpha==True:
+                        print('Please use an integer')
+                    else:
+                        while True:
+                            number_custom_grades=input('Please provide the number assignments completed for this category ')
+                            if number_custom_grades.isalpha()==True:
+                                print('Please use an integer')
+                            else:
+                                break
+
+                customs(custom_name,custom_weight,number_custom_grades,)
+
                 def customs(name,weight,amount):
                     print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
                     for numbers in range(int(amount)):
@@ -132,8 +149,7 @@ def custom():
                     custom_final=custom_totalgrades/int(amount)
                     custom_endd=int(custom_final)*float(weigh_percentage)
                     custom_list.append(custom_endd)
-            
-                customs(input('please provide the name '),input('the weight '),input('amount '))
+        
                 print(custom_list)
                 global custom_end
                 custom_end=sum(custom_list)
