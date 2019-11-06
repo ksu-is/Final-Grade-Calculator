@@ -5,6 +5,8 @@ assignment_end=''
 test_end=''
 quiz_end=''
 final_end=''
+custom_advance_details=''
+
 def quizzes():
     while True:
         quiz_weight=input('How much does your quizzes weigh? or if not applicable type n/a ')
@@ -113,9 +115,10 @@ def homework():
 def custom():
     custom_list=[]
     custom_scores=[]
+    global custom_advance_details
     custom_advance_details=[]
     global custom_end
-    #custom_end=sum(custom_list)
+    custom_end=sum(custom_list)
 #The counters job is to signal the program to end the loop once they have entered all their categories in
     counter=0
 #the customs functions job is to make the program more versatile, when adding new categories.
@@ -132,6 +135,8 @@ def custom():
         custom_details=custom_name,'final grade is', custom_endd
         custom_advance_details.append(custom_details)
         print(custom_advance_details)
+        custom_list.append(custom_endd)
+
 
 
 
@@ -157,7 +162,6 @@ def custom():
                             print('Please use an integer')
                         else:
                             customs(custom_name,custom_weight,number_custom_grades)
-                            print(custom_list)
                             custom_end=sum(custom_list)
                             while counter==int(custom_amount):
                                 Menu()
