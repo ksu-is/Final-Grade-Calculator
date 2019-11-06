@@ -119,14 +119,14 @@ def custom():
         if custom_amount=='n/a':
             Menu()
         elif custom_amount.isalpha()==True:
-            print('Please use a integer or decimal')
+            print('Please use a integer or decimal ')
         else:
             for numbers in range(int(custom_amount)):
                 custom_name=input('Please provide a name for the category')
                 if custom_name.isdigit()==True:
                     print("Please use letters only")
                 else:
-                    custom_weight=input('Enter the weight of this category')
+                    custom_weight=input('Enter the weight of this category ')
                     if custom_weight.isalpha==True:
                         print('Please use an integer')
                     else:
@@ -136,24 +136,23 @@ def custom():
                                 print('Please use an integer')
                             else:
                                 break
-
-                customs(custom_name,custom_weight,number_custom_grades,)
-
-                def customs(name,weight,amount):
-                    print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
-                    for numbers in range(int(amount)):
-                        scores=int(input('please provide your scores for this category'))
-                    custom_scores.append(scores)
-                    weigh_percentage=int(weight)/100
-                    custom_totalgrades=sum(custom_scores)
-                    custom_final=custom_totalgrades/int(amount)
-                    custom_endd=int(custom_final)*float(weigh_percentage)
-                    custom_list.append(custom_endd)
-        
-                print(custom_list)
-                global custom_end
-                custom_end=sum(custom_list)
-                Menu()
+    
+    for numbers in range(int(custom_amount)):
+        def customs(name,weight,amount):
+            print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
+            for numbers in range(int(amount)):
+                scores=int(input('please provide your scores for this category'))
+                custom_scores.append(scores)
+            weigh_percentage=int(weight)/100
+            custom_totalgrades=sum(custom_scores)
+            custom_final=custom_totalgrades/int(amount)
+            custom_endd=int(custom_final)*float(weigh_percentage)
+            custom_list.append(custom_endd)
+                
+    print(custom_list) 
+    global custom_end
+    custom_end=sum(custom_list)
+    Menu()
                
 
 
