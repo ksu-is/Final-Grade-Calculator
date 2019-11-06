@@ -113,6 +113,7 @@ def homework():
                     Menu()
 def custom():
     custom_list=[]
+    custom_scores=[]
     while True:
         custom_amount=input('How many custom categories would you like to add? ')
         if custom_amount=='n/a':
@@ -123,10 +124,13 @@ def custom():
             for numbers in range(int(custom_amount)):
                 def customs(name,weight,amount):
                     print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
-                customs(input('please provide the name'),(input('the weight'),(input('amount'))
+                customs(input('please provide the name'),input('the weight'),input('amount'))
+                for numbers in range(int(amount)):
+                    scores=input('please provide your scores for this category')
+                    custom_scores.append(scores)
+                    
 
-
-        
+       
 if custom_end=="":
         custom_end=0
 elif custom_end>-1:
