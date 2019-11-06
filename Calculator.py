@@ -109,11 +109,20 @@ def homework():
                     global homework_end
                     homework_end=int(homework_final)*float(homework_weighp)
                     print('Your homework grades are worth',homework_end,'%', 'of your grade')
-                    return homework_end
                     Menu()
 def custom():
     custom_list=[]
     custom_scores=[]
+    def customs(name,weight,amount):
+        print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
+        for numbers in range(int(amount)):
+            scores=int(input('please provide your scores for this category'))
+            custom_scores.append(scores)
+        weigh_percentage=int(weight)/100
+        custom_totalgrades=sum(custom_scores)
+        custom_final=custom_totalgrades/int(amount)
+        custom_endd=int(custom_final)*float(weigh_percentage)
+        custom_list.append(custom_endd)
     while True:
         custom_amount=input('How many custom categories would you like to add? or enter n/a to return to menu ')
         if custom_amount=='n/a':
@@ -135,7 +144,19 @@ def custom():
                             if number_custom_grades.isalpha()==True:
                                 print('Please use an integer')
                             else:
-                                break
+                                for numbers in range(int(number_custom_grades)):
+                                    customs(custom_name,custom_weight,number_custom_grades)
+                                
+                                    def customs(name,weight,amount):
+                                        print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
+                                        for numbers in range(int(amount)):
+                                            scores=int(input('please provide your scores for this category'))
+                                            custom_scores.append(scores)
+                                        weigh_percentage=int(weight)/100
+                                        custom_totalgrades=sum(custom_scores)
+                                        custom_final=custom_totalgrades/int(amount)
+                                        custom_endd=int(custom_final)*float(weigh_percentage)
+                                        custom_list.append(custom_endd)
     
     for numbers in range(int(custom_amount)):
         def customs(name,weight,amount):
