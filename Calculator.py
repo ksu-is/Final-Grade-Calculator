@@ -134,7 +134,8 @@ def custom():
         custom_endd=int(custom_final)*float(weigh_percentage)
         custom_details=custom_name,'final grade is', custom_endd
         custom_advance_details.append(custom_details)
-        print(custom_advance_details)
+        for listed in custom_advance_details:
+            print(listed)
         custom_list.append(custom_endd)
 
 
@@ -166,11 +167,7 @@ def custom():
                             while counter==int(custom_amount):
                                 Menu()
                             
-                                           
-    
-               
-
-
+                                        
        
 if custom_end=="":
         custom_end=0
