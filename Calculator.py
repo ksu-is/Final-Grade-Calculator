@@ -115,8 +115,10 @@ def custom():
     custom_scores=[]
     global custom_end
     custom_end=sum(custom_list)
+#The counters job is to signal the program to end the loop once they have entered all their categories in
     counter=0
-
+#the customs functions job is to make the program more versatile, when adding new categories.
+#the menu's custom grade will the the product of all the categories in this function added together and multiplied by the weight.
     def customs(name,weight,amount):
         print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
         for numbers in range(int(amount)):
@@ -135,8 +137,8 @@ def custom():
         elif custom_amount.isalpha()==True:
             print('Please use a integer or decimal ')
         else:
-            counter+=1
             for numbers in range(int(custom_amount)):
+                counter+=1
                 custom_name=input('Please provide a name for the category')
                 if custom_name.isdigit()==True:
                     print("Please use letters only")
