@@ -121,9 +121,10 @@ def custom():
             print('Please use a integer or decimal')
         else:
             for numbers in range(int(custom_amount)):
-                custom_name=input('Please enter the name of your categories one at a time and hit enter after each response ')
-                custom_list.append(custom_name)
-                
+                def customs(name,weight,amount):
+                    print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
+                customs(input('please provide the name'),(input('the weight'),(input('amount'))
+
 
         
 if custom_end=="":
