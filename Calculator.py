@@ -113,8 +113,9 @@ def homework():
 def custom():
     custom_list=[]
     custom_scores=[]
+    custom_advance_details=[]
     global custom_end
-    custom_end=sum(custom_list)
+    #custom_end=sum(custom_list)
 #The counters job is to signal the program to end the loop once they have entered all their categories in
     counter=0
 #the customs functions job is to make the program more versatile, when adding new categories.
@@ -128,7 +129,11 @@ def custom():
         custom_totalgrades=sum(custom_scores)
         custom_final=custom_totalgrades/int(amount)
         custom_endd=int(custom_final)*float(weigh_percentage)
-        custom_list.append(custom_endd)
+        custom_details=custom_name,'final grade is', custom_endd
+        custom_advance_details.append(custom_details)
+        print(custom_advance_details)
+
+
 
     while True:
         custom_amount=input('How many custom categories would you like to add? or enter n/a to return to menu ')
@@ -139,7 +144,7 @@ def custom():
         else:
             for numbers in range(int(custom_amount)):
                 counter+=1
-                custom_name=input('Please provide a name for the category')
+                custom_name=input('Please provide a name for the category ')
                 if custom_name.isdigit()==True:
                     print("Please use letters only")
                 else:
