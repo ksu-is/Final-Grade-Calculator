@@ -117,10 +117,13 @@ def homework():
                     print('Your homework grades are worth',homework_end,'%', 'of your grade')
                     Menu()
 def custom():
+#The custom function allows the user to add categories they do not see on the menu, however, it only displays the average of all the categories added
+#They will only see the custom average weight of the categories together, if they want more details, they must use custom_advance_details
     custom_list=[]
     custom_scores=[]
     global custom_advance_details
     custom_advance_details=[]
+# The custom_advanced_details allows the user to view all the categories they added and their pertaining grade instead of just the average of all of them.
     global custom_end
     custom_end=sum(custom_list)
 #The counters job is to signal the program to end the loop once they have entered all their categories in
@@ -130,7 +133,7 @@ def custom():
     def customs(name,weight,amount):
         print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
         for numbers in range(int(amount)):
-            scores=int(input('please provide your scores for this category'))
+            scores=int(input('please provide your scores for this category one at a time '))
             custom_scores.append(scores)
         weigh_percentage=int(weight)/100
         custom_totalgrades=sum(custom_scores)
@@ -149,13 +152,13 @@ def custom():
         elif custom_amount.isalpha()==True:
             print('Please use a integer or decimal ')
         else:
+            print('You will now be asked to insert information for each category one at a time\n ')
             for numbers in range(int(custom_amount)):
-                counter+=1
-                custom_name=input('Please provide a name for the category ')
+                custom_name=input('Please provide a name for category ')
                 if custom_name.isdigit()==True:
                     print("Please use letters only")
                 else:
-                    custom_weight=input('Enter the weight of this category ')
+                    custom_weight=input('Enter the weight of category ')
                     if custom_weight.isalpha()==True:
                         print('Please use an integer')
                     else:
@@ -163,9 +166,10 @@ def custom():
                         if number_custom_grades.isalpha()==True:
                             print('Please use an integer')
                         else:
+                            counter+=1
                             customs(custom_name,custom_weight,number_custom_grades)
                             custom_end=sum(custom_list)
-                            while counter==int(custom_amount):
+                            while counter>=int(custom_amount):
                                 Menu()
                             
                                 
@@ -193,25 +197,23 @@ if final_end=='':
     final_end=0
 elif final_end>-1:
     final_end=final_end
-# The code above allows the function final grade to determine which categories to use. If the user did not insert any grade in a category, it will default to a 0    
+# The codes above allows the function final grade to determine which categories to use. If the user did not insert any grade in a category, it will default to a 0    
 def final():
     global final_end
     final_end=custom_end+homework_end+test_end+assignment_end+quiz_end+homework_end
     print( 'Your final Grade is',final_end,'%')
     Menu()
-
+# function final is the final function that adds all the final grades together
 def Menu():
     print("Hello, welcome to the Will I fail Calculator")
     print('This program will help calculate your final grade by finding the average weight of each pertaining category of your grade\nand then adding them together to output the final grade.')
-    
-
-    print('1 Grade Quizzes Current grade is',quiz_end,'%')
-    print('2 Grade Test Current grade is',test_end,'%')
-    print('3 Grade assignments Current grade is',assignment_end,'%')
-    print('4 Grade homework Current grade is',homework_end,'%')
-    print('5 Grade custom Current grade is',custom_end,'%')
-    print("6 Displays each individual custom course's grade instead of the entire average")
-    print('7 Calculate Final Grade (all other pertaining grades have to be filled before hand) Current final grade is', final_end,'%')
+    print('1: Grade Quizzes Current grade is',quiz_end,'%')
+    print('2: Grade Test Current grade is',test_end,'%')
+    print('3: Grade assignments Current grade is',assignment_end,'%')
+    print('4: Grade homework Current grade is',homework_end,'%')
+    print('5: Grade custom Current grade is',custom_end,'%')
+    print("6: Displays each individual custom course's grade instead of the entire average")
+    print('7: Calculate Final Grade (all other pertaining grades have to be filled before hand) Current final grade is', final_end,'%')
     print('8 Close program')
     
     Grader=input('Please Choose a category to start with by entering any of the following numbers above and press return key to confirm ')
@@ -227,6 +229,7 @@ def Menu():
     elif Grader=='5':
         custom()
     elif Grader=='6':
+        print('Below are all the categories you added along with their grades')
         print(custom_advance_details)
         menu_return=input('would you like to return to the Menu? y/n? ')
         if menu_return=='y':
