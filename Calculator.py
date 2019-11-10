@@ -10,6 +10,7 @@ custom_advance_details=''
 def quizzes():
     while True:
         quiz_weight=input('How much does your quizzes weigh? or if not applicable type n/a ')
+#category_weight ask for the weight of the current category in this case, it would be quizzes
         if quiz_weight=='n/a':
             Menu()
         elif quiz_weight.isdigit()==False:
@@ -17,6 +18,7 @@ def quizzes():
         else:
             while True:
                 quiz_amount=input('How many quizzes have you taken? ')
+#ask for the number of assignments completed in this category
                 if quiz_amount.isdigit()==False:
                     print('Please use a integer')
                 elif quiz_amount.isalpha():
@@ -38,6 +40,7 @@ def quizzes():
 #  Multiplies the final grade of the cateogry to corresponding weight to output how much this category affects the final grade
                     print('Your quizzes are worth',quiz_end,'%', 'of your grade')
                     Menu()
+# This function is repeated for the other hardcoded categories like test and assignments
                     
                 
 def Test():
@@ -122,7 +125,7 @@ def custom():
     custom_end=sum(custom_list)
 #The counters job is to signal the program to end the loop once they have entered all their categories in
     counter=0
-#the customs functions job is to make the program more versatile, when adding new categories.
+#the customs functions job is to make the program more versatile, when adding new categories. It is nearly the same function except has more parameters.
 #the menu's custom grade will the the product of all the categories in this function added together and multiplied by the weight.
     def customs(name,weight,amount):
         print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
@@ -207,8 +210,9 @@ def Menu():
     print('3 Grade assignments Current grade is',assignment_end,'%')
     print('4 Grade homework Current grade is',homework_end,'%')
     print('5 Grade custom Current grade is',custom_end,'%')
-    print('6 Calculate Final Grade (all other pertaining grades have to be filled before hand) Current final grade is', final_end,'%')
-    print('7 Close program')
+    print("6 Displays each individual custom course's grade instead of the entire average")
+    print('7 Calculate Final Grade (all other pertaining grades have to be filled before hand) Current final grade is', final_end,'%')
+    print('8 Close program')
     
     Grader=input('Please Choose a category to start with by entering any of the following numbers above and press return key to confirm ')
     
@@ -223,8 +227,15 @@ def Menu():
     elif Grader=='5':
         custom()
     elif Grader=='6':
-        final()
+        print(custom_advance_details)
+        menu_return=input('would you like to return to the Menu? y/n? ')
+        if menu_return=='y':
+            Menu()
+        else:
+            exit()
     elif Grader=='7':
+        final()
+    elif Grader=='8':
         exit()
     else:
         print('that is not one of the options')
