@@ -25,7 +25,7 @@ def quizzes():
                     quiz_value=[]
                     for scores in range(int(quiz_amount)):
                         quiz_scores=int(input('Please insert scores one at a time '))
-                        quiz_value.append(quiz_scores)
+                        quiz_value.append(quiz_scores)      
 #This allows the user to input grades and have the iterrated and added to a list for future reference
                     quiz_weighp=int(quiz_weight)/100
 # Quiz_weighp converts the category weight from an integer to a float
@@ -38,6 +38,7 @@ def quizzes():
 #  Multiplies the final grade of the cateogry to corresponding weight to output how much this category affects the final grade
                     print('Your quizzes are worth',quiz_end,'%', 'of your grade')
                     Menu()
+                    
                 
 def Test():
     while True:
@@ -224,7 +225,7 @@ def Menu():
     elif Grader=='6':
         final()
     elif Grader=='7':
-        exit
+        exit()
     else:
         print('that is not one of the options')
         Menu()
