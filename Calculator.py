@@ -164,8 +164,7 @@ def custom():
                             while counter==int(custom_amount):
                                 Menu()
                             
-                                        
-       
+                                
 if custom_end=="":
         custom_end=0
 elif custom_end>-1:
@@ -199,6 +198,9 @@ def final():
 
 def Menu():
     print("Hello, welcome to the Will I fail Calculator")
+    print('This program will help calculate your final grade by finding the average weight of each pertaining category of your grade\nand then adding them together to output the final grade.')
+    
+
     print('1 Grade Quizzes Current grade is',quiz_end,'%')
     print('2 Grade Test Current grade is',test_end,'%')
     print('3 Grade assignments Current grade is',assignment_end,'%')
@@ -207,7 +209,7 @@ def Menu():
     print('6 Calculate Final Grade (all other pertaining grades have to be filled before hand) Current final grade is', final_end,'%')
     print('7 Close program')
     
-    Grader=input('Please Choose a category to start with by entering any of the following numbers above ')
+    Grader=input('Please Choose a category to start with by entering any of the following numbers above and press return key to confirm ')
     
     if Grader=='1':
         quizzes()
