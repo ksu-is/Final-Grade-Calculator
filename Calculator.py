@@ -73,7 +73,7 @@ def assignments():
             print('Please use a integer')
         else:
             while True:
-                assignment_amount=input('How many assignments have you done? ')
+                assignment_amount=input('How many assignments have you completed? ')
                 if assignment_amount.isdigit()==False:
                     print('Please use a integer')
                 else:
@@ -97,7 +97,7 @@ def homework():
             print('Please use a integer')
         else:
             while True:
-                homework_amount=input('How much homework have you done? ')
+                homework_amount=input('How many homework assignments have you completed? ')
                 if homework_amount.isalpha()==True:
                     print('Please use a integer')
                 else:
@@ -137,9 +137,6 @@ def custom():
         for listed in custom_advance_details:
             print(listed)
         custom_list.append(custom_endd)
-
-
-
 
     while True:
         custom_amount=input('How many custom categories would you like to add? or enter n/a to return to menu ')
@@ -209,7 +206,9 @@ def Menu():
     print('5 Grade custom Current grade is',custom_end,'%')
     print('6 Calculate Final Grade (all other pertaining grades have to be filled before hand) Current final grade is', final_end,'%')
     print('7 Close program')
-    Grader=input('Please Choose a category to start with by entering any of the following numbers ')
+    
+    Grader=input('Please Choose a category to start with by entering any of the following numbers above ')
+    
     if Grader=='1':
         quizzes()
     elif Grader=='2':
