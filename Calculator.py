@@ -9,7 +9,7 @@ custom_advance_details=''
 
 def quizzes():
     while True:
-        quiz_weight=input('How much does your quizzes weigh? or if not applicable type n/a ')
+        quiz_weight=input('How much does your quizzes weigh? or if not applicable type n/a: ')
 #category_weight ask for the weight of the current category in this case, it would be quizzes
         if quiz_weight=='n/a':
             Menu()
@@ -17,7 +17,7 @@ def quizzes():
             print('Please use a integer')
         else:
             while True:
-                quiz_amount=input('How many quizzes have you taken? ')
+                quiz_amount=input('How many quizzes have you taken?: ')
 #ask for the number of assignments completed in this category
                 if quiz_amount.isdigit()==False:
                     print('Please use a integer')
@@ -26,7 +26,7 @@ def quizzes():
                 else:
                     quiz_value=[]
                     for scores in range(int(quiz_amount)):
-                        quiz_scores=int(input('Please insert scores one at a time '))
+                        quiz_scores=int(input('Please insert scores one at a time: '))
                         quiz_value.append(quiz_scores)      
 #This allows the user to input grades and have the iterrated and added to a list for future reference
                     quiz_weighp=int(quiz_weight)/100
@@ -45,20 +45,20 @@ def quizzes():
                 
 def Test():
     while True:
-        test_weight=input('How much does your Test weigh? or if not applicable type n/a ')
+        test_weight=input('How much does your Test weigh? or if not applicable type n/a: ')
         if test_weight=='n/a':
             Menu()
         elif test_weight.isdigit()==False:
             print('Please use a integer')
         else:
             while True:
-                test_amount=input('How many test have you taken? ')
+                test_amount=input('How many test have you taken?: ')
                 if test_amount.isdigit()==False:
                     print('Please use a integer')
                 else:
                     test_value=[]
                     for scores in range(int(test_amount)):
-                        test_scores=int(input('Please insert scores one at a time '))
+                        test_scores=int(input('Please insert scores one at a time: '))
                         test_value.append(test_scores)
                     test_weighp=int(test_weight)/100
                     test_total=sum(test_value)
@@ -70,20 +70,20 @@ def Test():
 
 def assignments():
     while True:
-        assignment_weight=input('How much does your assignments weigh? or if not applicable type n/a ')
+        assignment_weight=input('How much does your assignments weigh? or if not applicable type n/a: ')
         if assignment_weight=='n/a':
             Menu()
         elif assignment_weight.isdigit()==False:
             print('Please use a integer')
         else:
             while True:
-                assignment_amount=input('How many assignments have you completed? ')
+                assignment_amount=input('How many assignments have you completed?: ')
                 if assignment_amount.isdigit()==False:
                     print('Please use a integer')
                 else:
                     assignment_value=[]
                     for scores in range(int(assignment_amount)):
-                        assignment_scores=int(input('Please insert scores one at a time '))
+                        assignment_scores=int(input('Please insert scores one at a time: '))
                         assignment_value.append(assignment_scores)
                     assignment_weighp=int(assignment_weight)/100
                     assignment_total=sum(assignment_value)
@@ -94,20 +94,20 @@ def assignments():
                     Menu()
 def homework():
     while True:
-        homework_weight=input('How much does your homework weigh? or if not applicable type n/a ')
+        homework_weight=input('How much does your homework weigh? or if not applicable type n/a: ')
         if homework_weight=='n/a':
             Menu()
         elif homework_weight.isdigit()==False:
             print('Please use a integer')
         else:
             while True:
-                homework_amount=input('How many homework assignments have you completed? ')
+                homework_amount=input('How many homework assignments have you completed?: ')
                 if homework_amount.isalpha()==True:
                     print('Please use a integer')
                 else:
                     homework_value=[]
                     for scores in range(int(homework_amount)):
-                        homework_scores=int(input('Please insert scores one at a time '))
+                        homework_scores=int(input('Please insert scores one at a time: '))
                         homework_value.append(homework_scores)
                     homework_weighp=int(homework_weight)/100
                     homework_total=sum(homework_value)
@@ -133,7 +133,7 @@ def custom():
     def customs(name,weight,amount):
         print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
         for numbers in range(int(amount)):
-            scores=int(input('please provide your scores for this category one at a time '))
+            scores=int(input('please provide your scores for this category one at a time: '))
             custom_scores.append(scores)
         weigh_percentage=int(weight)/100
         custom_totalgrades=sum(custom_scores)
