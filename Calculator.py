@@ -230,7 +230,8 @@ def Menu():
         custom()
     elif Grader=='6':
         print('Below are all the categories you added along with their grades')
-        print(custom_advance_details)
+        for grades in custom_advance_details:
+            print(grades)
         menu_return=input('would you like to return to the Menu? y/n? ')
         if menu_return=='y':
             Menu()
