@@ -72,8 +72,11 @@ please provide your scores for this category one at a time 100
 # Example of details of custom
 
 Below are all the categories you added along with their grades
+
 ('Projetcs', 'final grade is', 50.0)
+
 ('Presentaions', 'final grade is', 95.0)
+
 would you like to return to the Menu? y/n? 
 
   
