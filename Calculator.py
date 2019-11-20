@@ -201,11 +201,18 @@ elif final_end>-1:
 def final():
     global final_end
     final_end=custom_end+homework_end+test_end+assignment_end+quiz_end
-    print( 'Your final Grade is',final_end,'%')
-    Menu()
+    print(final_end)
+    if final_end<70:
+        print('Congratulations! you failed with a',final_end,'%')
+    elif 70<=final_end<80:
+        print("You have a",final_end,"% Well atleast C's get degrees")
+    elif 80<=final_end<90:
+        print("Good job your above average with a",final_end,"%")
+    
+            
 # function final is the final function that adds all the final grades together
 def Menu():
-    print("Hello, welcome to the Will I fail Calculator")
+    print("Hello, welcome to the Will I Fail Calculator")
     print('This program will help calculate your final grade by finding the average weight of each pertaining category of your grade\nand then adding them together to output the final grade.')
     print('1: Grade Quizzes Current grade is',quiz_end,'%')
     print('2: Grade Test Current grade is',test_end,'%')
@@ -216,7 +223,7 @@ def Menu():
     print('7: Calculate Final Grade (all other pertaining grades have to be filled before hand) Current final grade is', final_end,'%')
     print('8 Close program')
     
-    Grader=input('Please Choose a category to start with by entering any of the following numbers above and press return key to confirm ')
+    Grader=input('Please Choose a category to start with by entering any of the following numbers above and press the return key to confirm ')
     
     if Grader=='1':
         quizzes()
@@ -232,11 +239,13 @@ def Menu():
         print('Below are all the categories you added along with their grades')
         for grades in custom_advance_details:
             print(grades)
-        menu_return=input('would you like to return to the Menu? y/n? ')
+        menu_return=input('would you like to return to the Menu? y/n? No will exit the program ')
         if menu_return=='y':
             Menu()
-        else:
+        elif menu_return=='n':
             exit()
+        else:
+            print('Not an option')
     elif Grader=='7':
         final()
     elif Grader=='8':
