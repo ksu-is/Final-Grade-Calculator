@@ -204,14 +204,21 @@ def final():
     print(final_end)
     if final_end<70:
         print('Congratulations! you failed with a',final_end,'%')
-    elif 70<=final_end<80:
+        Menu()
+    elif 80<final_end>=70:
         print("You have a",final_end,"% Well atleast C's get degrees")
+        Menu()
     elif 80<=final_end<90:
         print("Good job your above average with a",final_end,"%")
+        Menu()
+    elif final_end>=90:
+        print("You aced the course with a",final_end,"%")
+        Menu() 
     
             
 # function final is the final function that adds all the final grades together
 def Menu():
+    '\n'
     print("Hello, welcome to the Will I Fail Calculator")
     print('This program will help calculate your final grade by finding the average weight of each pertaining category of your grade\nand then adding them together to output the final grade.')
     print('1: Grade Quizzes Current grade is',quiz_end,'%')
