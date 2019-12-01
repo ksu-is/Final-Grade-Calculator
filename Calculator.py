@@ -218,7 +218,6 @@ def final():
             
 # function final is the final function that adds all the final grades together
 def Menu():
-    '\n'
     print("Hello, welcome to the Will I Fail Calculator")
     print('This program will help calculate your final grade by finding the average weight of each pertaining category of your grade\nand then adding them together to output the final grade.')
     print('1: Grade Quizzes Current grade is',quiz_end,'%')
