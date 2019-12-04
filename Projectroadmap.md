@@ -12,6 +12,7 @@
       1. [x] create another function within the custom function(named customs) that takes different parameters(ex:name,weight,number assignments in category)
       1. [x] Ask user the number of custom category they would like to add
       1. [x] call the customs and append information to a list
+      1. [ ] Find a better way to display and ask for custom categories
   1. [x] Create an option on the menu to display custom category details since the menu will only show the average of all custom categories together instead individually
   1. [ ] Instead of averaging all the custom categories together, create a function that displays them individually
   1. [x] Create what if statements to detect which categories the user used to calculate final grade
