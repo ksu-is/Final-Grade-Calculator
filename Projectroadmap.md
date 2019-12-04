@@ -5,6 +5,7 @@
     1. [x] organize given information into variables
     1. [x] calculate grade for category by adding the scores of each assignment, dividing them by the total amount, and then multiplying the weight
     1. [x] Ensure it outputs the correct grade
+    1. [ ] Fix iteration error when a number is not given when asking for grades
   1. [x] Duplicate and adjust the grade category calculator to other categories (ex:quizzes, test, assignments)
   1. [x] Print the grade on the menu
       1. [x] Make the final grade local variables in the funtions global so that they can be referenced in another function like menu
@@ -18,6 +19,6 @@
   1. [x] Create what if statements to detect which categories the user used to calculate final grade
   1. [ ] Continue to run and test for code to search for errors or crashes
   1. [ ] Update the readme as changes occur
-  
+  1. [ ] Make code easier to read and decipher
    
   
