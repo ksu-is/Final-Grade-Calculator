@@ -82,4 +82,4 @@ would you like to return to the Menu? y/n?
   
  ## Calculating for Final Grade
   
-  Once the user has filled out all their categories, they will now be able to use function 6. Function 6 will calculate their final grade by adding all their final values from each category together and then outputting it to the user. Once this is finished, the program will end.
+  Once the user has filled out all their categories, they will now be able to use function 7. Function 7 will calculate their final grade by adding all their final values from each category together and then outputting it to the user. Once this is finished, the program will end.
