@@ -58,7 +58,7 @@ def Test():
                 else:
                     test_value=[]
                     for scores in range(int(test_amount)):
-                        test_scores=int(input('Please insert scores one at a time '))
+                        test_scores=float(input('Please insert scores one at a time '))
                         test_value.append(test_scores)
                     test_weighp=int(test_weight)/100
                     test_total=sum(test_value)
@@ -83,7 +83,7 @@ def assignments():
                 else:
                     assignment_value=[]
                     for scores in range(int(assignment_amount)):
-                        assignment_scores=int(input('Please insert scores one at a time '))
+                        assignment_scores=float(input('Please insert scores one at a time '))
                         assignment_value.append(assignment_scores)
                     assignment_weighp=int(assignment_weight)/100
                     assignment_total=sum(assignment_value)
@@ -107,7 +107,7 @@ def homework():
                 else:
                     homework_value=[]
                     for scores in range(int(homework_amount)):
-                        homework_scores=int(input('Please insert scores one at a time '))
+                        homework_scores=float(input('Please insert scores one at a time '))
                         homework_value.append(homework_scores)
                     homework_weighp=int(homework_weight)/100
                     homework_total=sum(homework_value)
@@ -133,7 +133,7 @@ def custom():
     def customs(name,weight,amount):
         print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
         for numbers in range(int(amount)):
-            scores=int(input('please provide your scores for this category one at a time '))
+            scores=float(input('please provide your scores for this category one at a time '))
             custom_scores.append(scores)
         weigh_percentage=int(weight)/100
         custom_totalgrades=sum(custom_scores)
