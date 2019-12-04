@@ -73,7 +73,7 @@ please provide your scores for this category one at a time 100
 
 Below are all the categories you added along with their grades
 
-('Projetcs', 'final grade is', 50.0)
+('Projects', 'final grade is', 50.0)
 
 ('Presentaions', 'final grade is', 95.0)
 
