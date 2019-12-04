@@ -9,7 +9,7 @@ custom_advance_details=''
 
 def quizzes():
     while True:
-        quiz_weight=input('How much does your quizzes weigh? or if not applicable type n/a: ')
+        quiz_weight=input('How much does your quizzes weigh? or if not applicable type n/a ')
 #category_weight ask for the weight of the current category in this case, it would be quizzes
         if quiz_weight=='n/a':
             Menu()
@@ -17,7 +17,7 @@ def quizzes():
             print('Please use a integer')
         else:
             while True:
-                quiz_amount=input('How many quizzes have you taken?: ')
+                quiz_amount=input('How many quizzes have you taken? ')
 #ask for the number of assignments completed in this category
                 if quiz_amount.isdigit()==False:
                     print('Please use a integer')
@@ -26,7 +26,7 @@ def quizzes():
                 else:
                     quiz_value=[]
                     for scores in range(int(quiz_amount)):
-                        quiz_scores=int(input('Please insert scores one at a time: '))
+                        quiz_scores=float(input('Please insert scores one at a time '))
                         quiz_value.append(quiz_scores)      
 #This allows the user to input grades and have the iterrated and added to a list for future reference
                     quiz_weighp=int(quiz_weight)/100
@@ -45,20 +45,20 @@ def quizzes():
                 
 def Test():
     while True:
-        test_weight=input('How much does your Test weigh? or if not applicable type n/a: ')
+        test_weight=input('How much does your Test weigh? or if not applicable type n/a ')
         if test_weight=='n/a':
             Menu()
         elif test_weight.isdigit()==False:
             print('Please use a integer')
         else:
             while True:
-                test_amount=input('How many test have you taken?: ')
+                test_amount=input('How many test have you taken? ')
                 if test_amount.isdigit()==False:
                     print('Please use a integer')
                 else:
                     test_value=[]
                     for scores in range(int(test_amount)):
-                        test_scores=int(input('Please insert scores one at a time: '))
+                        test_scores=int(input('Please insert scores one at a time '))
                         test_value.append(test_scores)
                     test_weighp=int(test_weight)/100
                     test_total=sum(test_value)
@@ -70,20 +70,20 @@ def Test():
 
 def assignments():
     while True:
-        assignment_weight=input('How much does your assignments weigh? or if not applicable type n/a: ')
+        assignment_weight=input('How much does your assignments weigh? or if not applicable type n/a ')
         if assignment_weight=='n/a':
             Menu()
         elif assignment_weight.isdigit()==False:
             print('Please use a integer')
         else:
             while True:
-                assignment_amount=input('How many assignments have you completed?: ')
+                assignment_amount=input('How many assignments have you completed? ')
                 if assignment_amount.isdigit()==False:
                     print('Please use a integer')
                 else:
                     assignment_value=[]
                     for scores in range(int(assignment_amount)):
-                        assignment_scores=int(input('Please insert scores one at a time: '))
+                        assignment_scores=int(input('Please insert scores one at a time '))
                         assignment_value.append(assignment_scores)
                     assignment_weighp=int(assignment_weight)/100
                     assignment_total=sum(assignment_value)
@@ -94,20 +94,20 @@ def assignments():
                     Menu()
 def homework():
     while True:
-        homework_weight=input('How much does your homework weigh? or if not applicable type n/a: ')
+        homework_weight=input('How much does your homework weigh? or if not applicable type n/a ')
         if homework_weight=='n/a':
             Menu()
         elif homework_weight.isdigit()==False:
             print('Please use a integer')
         else:
             while True:
-                homework_amount=input('How many homework assignments have you completed?: ')
+                homework_amount=input('How many homework assignments have you completed? ')
                 if homework_amount.isalpha()==True:
                     print('Please use a integer')
                 else:
                     homework_value=[]
                     for scores in range(int(homework_amount)):
-                        homework_scores=int(input('Please insert scores one at a time: '))
+                        homework_scores=int(input('Please insert scores one at a time '))
                         homework_value.append(homework_scores)
                     homework_weighp=int(homework_weight)/100
                     homework_total=sum(homework_value)
@@ -133,7 +133,7 @@ def custom():
     def customs(name,weight,amount):
         print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
         for numbers in range(int(amount)):
-            scores=int(input('please provide your scores for this category one at a time: '))
+            scores=int(input('please provide your scores for this category one at a time '))
             custom_scores.append(scores)
         weigh_percentage=int(weight)/100
         custom_totalgrades=sum(custom_scores)
@@ -171,8 +171,7 @@ def custom():
                             custom_end=sum(custom_list)
                             while counter>=int(custom_amount):
                                 Menu()
-                            
-                                
+                                                   
 if custom_end=="":
         custom_end=0
 elif custom_end>-1:
@@ -200,25 +199,12 @@ elif final_end>-1:
 # The codes above allows the function final grade to determine which categories to use. If the user did not insert any grade in a category, it will default to a 0    
 def final():
     global final_end
-    final_end=custom_end+homework_end+test_end+assignment_end+quiz_end
-    print(final_end)
-    if final_end<70:
-        print('Congratulations! you failed with a',final_end,'%')
-        Menu()
-    elif 80<final_end>=70:
-        print("You have a",final_end,"% Well atleast C's get degrees")
-        Menu()
-    elif 80<=final_end<90:
-        print("Good job your above average with a",final_end,"%")
-        Menu()
-    elif final_end>=90:
-        print("You aced the course with a",final_end,"%")
-        Menu() 
-    
-            
+    final_end=custom_end+homework_end+test_end+assignment_end+quiz_end+homework_end
+    print( 'Your final Grade is',final_end,'%')
+    Menu()
 # function final is the final function that adds all the final grades together
 def Menu():
-    print("Hello, welcome to the Will I Fail Calculator")
+    print("Hello, welcome to the Will I fail Calculator")
     print('This program will help calculate your final grade by finding the average weight of each pertaining category of your grade\nand then adding them together to output the final grade.')
     print('1: Grade Quizzes Current grade is',quiz_end,'%')
     print('2: Grade Test Current grade is',test_end,'%')
@@ -229,7 +215,7 @@ def Menu():
     print('7: Calculate Final Grade (all other pertaining grades have to be filled before hand) Current final grade is', final_end,'%')
     print('8 Close program')
     
-    Grader=input('Please Choose a category to start with by entering any of the following numbers above and press the return key to confirm ')
+    Grader=input('Please Choose a category to start with by entering any of the following numbers above and press return key to confirm ')
     
     if Grader=='1':
         quizzes()
@@ -243,15 +229,12 @@ def Menu():
         custom()
     elif Grader=='6':
         print('Below are all the categories you added along with their grades')
-        for grades in custom_advance_details:
-            print(grades)
-        menu_return=input('would you like to return to the Menu? y/n? No will exit the program ')
+        print(custom_advance_details)
+        menu_return=input('would you like to return to the Menu? y/n? ')
         if menu_return=='y':
             Menu()
-        elif menu_return=='n':
-            exit()
         else:
-            print('Not an option')
+            exit()
     elif Grader=='7':
         final()
     elif Grader=='8':
