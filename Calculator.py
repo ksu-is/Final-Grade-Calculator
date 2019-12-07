@@ -38,7 +38,7 @@ def quizzes():
                     global quiz_end
                     quiz_end=int(quiz_final)*float(quiz_weighp)
 #  Multiplies the final grade of the cateogry to corresponding weight to output how much this category affects the final grade
-                    print('Your quizzes are worth',quiz_end,'%', 'of your grade')
+                    print('Your quiz average was',quiz_final,"%. The weight of your quizzes for the final grade is", quiz_end,'%.')
                     Menu()
 # This function is repeated for the other hardcoded categories like test and assignments
                     
@@ -206,12 +206,12 @@ def final():
 def Menu():
     print("Hello, welcome to the Will I fail Calculator")
     print('This program will help calculate your final grade by finding the average weight of each pertaining category of your grade\nand then adding them together to output the final grade.')
-    print('1: Grade Quizzes Current grade is',quiz_end,'%')
-    print('2: Grade Test Current grade is',test_end,'%')
-    print('3: Grade assignments Current grade is',assignment_end,'%')
-    print('4: Grade homework Current grade is',homework_end,'%')
-    print('5: Grade custom Current grade is',custom_end,'%')
-    print("6: Displays each individual custom course's grade instead of the entire average")
+    print('1: Grade Quizzes Current weight is',quiz_end,'%')
+    print('2: Grade Test Current weight is',test_end,'%')
+    print('3: Grade Assignments Current weight is',assignment_end,'%')
+    print('4: Grade Homework Current weight is',homework_end,'%')
+    print('5: Grade Custom Current weight is',custom_end,'%')
+    print("6: Display each individual custom course's grade instead of the entire average")
     print('7: Calculate Final Grade (all other pertaining grades have to be filled before hand) Current final grade is', final_end,'%')
     print('8 Close program')
     
