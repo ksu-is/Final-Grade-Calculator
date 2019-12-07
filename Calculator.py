@@ -13,7 +13,7 @@ def quizzes():
 #category_weight ask for the weight of the current category in this case, it would be quizzes
         if quiz_weight=='n/a':
             Menu()
-        elif quiz_weight.isdigit()==False:
+        elif quiz_weight.isdecimal()==False:
             print('Please use a integer')
         else:
             while True:
@@ -48,7 +48,7 @@ def Test():
         test_weight=input('How much does your Test weigh? or if not applicable type n/a ')
         if test_weight=='n/a':
             Menu()
-        elif test_weight.isdigit()==False:
+        elif test_weight.isdecimal()==False:
             print('Please use a integer')
         else:
             while True:
@@ -73,7 +73,7 @@ def assignments():
         assignment_weight=input('How much does your assignments weigh? or if not applicable type n/a ')
         if assignment_weight=='n/a':
             Menu()
-        elif assignment_weight.isdigit()==False:
+        elif assignment_weight.isdecimal()==False:
             print('Please use a integer')
         else:
             while True:
@@ -97,12 +97,12 @@ def homework():
         homework_weight=input('How much does your homework weigh? or if not applicable type n/a ')
         if homework_weight=='n/a':
             Menu()
-        elif homework_weight.isdigit()==False:
+        elif homework_weight.isdecimal()==False:
             print('Please use a integer')
         else:
             while True:
                 homework_amount=input('How many homework assignments have you completed? ')
-                if homework_amount.isalpha()==True:
+                if homework_amount.isdigit()==False:
                     print('Please use a integer')
                 else:
                     homework_value=[]
@@ -163,7 +163,7 @@ def custom():
                         print('Please use an integer')
                     else:
                         number_custom_grades=input('Please provide the number assignments completed for this category ')
-                        if number_custom_grades.isalpha()==True:
+                        if number_custom_grades.isdecimal()==False:
                             print('Please use an integer')
                         else:
                             counter+=1
@@ -240,7 +240,7 @@ def Menu():
     elif Grader=='8':
         exit()
     else:
-        print('that is not one of the options')
+        print('That is not one of the options')
         Menu()
 
 
