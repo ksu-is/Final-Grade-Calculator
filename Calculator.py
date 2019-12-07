@@ -38,7 +38,7 @@ def quizzes():
                     global quiz_end
                     quiz_end=int(quiz_final)*float(quiz_weighp)
 #  Multiplies the final grade of the cateogry to corresponding weight to output how much this category affects the final grade
-                    print('Your quiz average was',quiz_final,"%. The weight of your quizzes for the final grade is", quiz_end,'%.')
+                    print('Your quiz average was',quiz_final,"%. Your quizzes weigh", quiz_end,"% of your final grade.")
                     Menu()
 # This function is repeated for the other hardcoded categories like test and assignments
                     
@@ -65,7 +65,7 @@ def Test():
                     test_final=test_total/int(test_amount)
                     global test_end
                     test_end=int(test_final)*float(test_weighp)
-                    print('Your test grades are worth',test_end,'%', 'of your grade')
+                    print('Your test average was',test_final,"%. Your test weigh", test_end,"% of your final grade.")
                     Menu()
 
 def assignments():
@@ -90,7 +90,7 @@ def assignments():
                     assignment_final=assignment_total/int(assignment_amount)
                     global assignment_end
                     assignment_end=int(assignment_final)*float(assignment_weighp)
-                    print('Your assignment grades are worth',assignment_end,'%', 'of your grade')
+                    print('Your assignments average was',assignment_final,"%. Your assignments weigh", assignment_end,"% of your final grade.")
                     Menu()
 def homework():
     while True:
@@ -114,7 +114,7 @@ def homework():
                     homework_final=homework_total/int(homework_amount)
                     global homework_end
                     homework_end=int(homework_final)*float(homework_weighp)
-                    print('Your homework grades are worth',homework_end,'%', 'of your grade')
+                    print('Your homework average was',homework_final,"%. Your homework weigh", homework_end,"% of your final grade.")
                     Menu()
 def custom():
 #The custom function allows the user to add categories they do not see on the menu, however, it only displays the average of all the categories added
@@ -138,12 +138,12 @@ def custom():
         weigh_percentage=int(weight)/100
         custom_totalgrades=sum(custom_scores)
         custom_final=custom_totalgrades/int(amount)
-        custom_endd=int(custom_final)*float(weigh_percentage)
-        custom_details=custom_name,'final grade is', custom_endd
+        custom_final_weight=int(custom_final)*float(weigh_percentage)
+        custom_details=custom_name,'average is', custom_final, '% and is worth', custom_final_weight,'%.'
         custom_advance_details.append(custom_details)
         for listed in custom_advance_details:
             print(listed)
-        custom_list.append(custom_endd)
+        custom_list.append(custom_final_weight)
 
     while True:
         custom_amount=input('How many custom categories would you like to add? or enter n/a to return to menu ')
@@ -159,7 +159,7 @@ def custom():
                     print("Please use letters only")
                 else:
                     custom_weight=input('Enter the weight of category ')
-                    if custom_weight.isalpha()==True:
+                    if custom_weight.isdecimal()==False:
                         print('Please use an integer')
                     else:
                         number_custom_grades=input('Please provide the number assignments completed for this category ')
