@@ -131,9 +131,9 @@ def custom():
 #the customs functions job is to make the program more versatile, when adding new categories. It is nearly the same function except has more parameters.
 #the menu's custom grade will the the product of all the categories in this function added together and multiplied by the weight.
     def customs(name,weight,amount):
-        print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
+#print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
         for numbers in range(int(amount)):
-            scores=float(input('please provide your scores for this category one at a time '))
+            scores=float(input('Please provide your scores for this category one at a time '))
             custom_scores.append(scores)
         weigh_percentage=int(weight)/100
         custom_totalgrades=sum(custom_scores)
@@ -141,8 +141,6 @@ def custom():
         custom_final_weight=int(custom_final)*float(weigh_percentage)
         custom_details=custom_name,'average is', custom_final, '% and weighs', custom_final_weight,'% of your final grade.'
         custom_advance_details.append(custom_details)
-        for listed in custom_advance_details:
-            print(listed)
         custom_list.append(custom_final_weight)
     
     
