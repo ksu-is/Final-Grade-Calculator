@@ -144,6 +144,8 @@ def custom():
         for listed in custom_advance_details:
             print(listed)
         custom_list.append(custom_final_weight)
+    
+    
 
     
     custom_amount=input('How many custom categories would you like to add? or enter n/a to return to menu ')
@@ -158,6 +160,7 @@ def custom():
             if custom_name.isdigit()==True:
                 print("Please use letters only")
             else:
+                custom_scores=[]
                 custom_weight=input('Enter the weight of category ')
                 while custom_weight.isdecimal()==False:     
                     print('Please use an integer')
