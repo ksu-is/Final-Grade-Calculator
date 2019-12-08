@@ -123,7 +123,7 @@ def custom():
     custom_scores=[]
     global custom_advance_details
     custom_advance_details=[]
-# The custom_advance_details allows the user to view all the categories they added and their pertaining grade instead of just the average of all of them.
+# The custom_advanced_details allows the user to view all the categories they added and their pertaining grade instead of just the average of all of them.
     global custom_end
     custom_end=sum(custom_list)
 #The counters job is to signal the program to end the loop once they have entered all their categories in
@@ -158,21 +158,19 @@ def custom():
                 if custom_name.isdigit()==True:
                     print("Please use letters only")
                 else:
-                    while True:
-                        custom_weight=input('Enter the weight of category ')
-                        if custom_weight.isdecimal()==False:
+                    custom_weight=input('Enter the weight of category ')
+                    if custom_weight.isdecimal()==False:
+                        print('Please use an integer')
+                    else:
+                        number_custom_grades=input('Please provide the number assignments completed for this category ')
+                        if number_custom_grades.isdecimal()==False:
                             print('Please use an integer')
                         else:
-                            while True:
-                                number_custom_grades=input('Please provide the number assignments completed for this category ')
-                                if number_custom_grades.isdecimal()==False:
-                                    print('Please use an integer')
-                                else:
-                                    counter+=1
-                                    customs(custom_name,custom_weight,number_custom_grades)
-                                    custom_end=sum(custom_list)
-                                    while counter>=int(custom_amount):
-                                        Menu()
+                            counter+=1
+                            customs(custom_name,custom_weight,number_custom_grades)
+                            custom_end=sum(custom_list)
+                            while counter>=int(custom_amount):
+                                Menu()
                                                    
 if custom_end=="":
         custom_end=0
@@ -231,8 +229,7 @@ def Menu():
         custom()
     elif Grader=='6':
         print('Below are all the categories you added along with their grades')
-        for listed in custom_advance_details:
-            print(listed)
+        print(custom_advance_details)
         menu_return=input('would you like to return to the Menu? y/n? ')
         if menu_return=='y':
             Menu()
