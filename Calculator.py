@@ -145,32 +145,34 @@ def custom():
             print(listed)
         custom_list.append(custom_final_weight)
 
-    while True:
-        custom_amount=input('How many custom categories would you like to add? or enter n/a to return to menu ')
-        if custom_amount=='n/a':
-            Menu()
-        elif custom_amount.isalpha()==True:
-            print('Please use a integer or decimal ')
-        else:
-            print('You will now be asked to insert information for each category one at a time\n ')
-            for numbers in range(int(custom_amount)):
-                custom_name=input('Please provide a name for category ')
-                if custom_name.isdigit()==True:
-                    print("Please use letters only")
-                else:
+    
+    custom_amount=input('How many custom categories would you like to add? or enter n/a to return to menu ')
+    if custom_amount=='n/a':
+        Menu()
+    elif custom_amount.isalpha()==True:
+        print('Please use a integer or decimal ')
+    else:
+        print('You will now be asked to insert information for each category one at a time\n ')
+        for numbers in range(int(custom_amount)):
+            custom_name=input('Please provide a name for category ')
+            if custom_name.isdigit()==True:
+                print("Please use letters only")
+            else:
+                custom_weight=input('Enter the weight of category ')
+                while custom_weight.isdecimal()==False:     
+                    print('Please use an integer')
                     custom_weight=input('Enter the weight of category ')
-                    if custom_weight.isdecimal()==False:
+                else:
+                    number_custom_grades=input('Please provide the number assignments completed for this category ')
+                    while number_custom_grades.isdecimal()==False:
                         print('Please use an integer')
-                    else:
                         number_custom_grades=input('Please provide the number assignments completed for this category ')
-                        if number_custom_grades.isdecimal()==False:
-                            print('Please use an integer')
-                        else:
-                            counter+=1
-                            customs(custom_name,custom_weight,number_custom_grades)
-                            custom_end=sum(custom_list)
-                            while counter>=int(custom_amount):
-                                Menu()
+                    else:
+                        counter+=1
+                        customs(custom_name,custom_weight,number_custom_grades)
+                        custom_end=sum(custom_list)
+                        while counter>=int(custom_amount):
+                             Menu()
                                                    
 if custom_end=="":
         custom_end=0
