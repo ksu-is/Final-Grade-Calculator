@@ -128,9 +128,9 @@ def custom():
     custom_end=sum(custom_list)
 #The counters job is to signal the program to end the loop once they have entered all their categories in
     counter=0
-#the customs functions job is to make the program more versatile, when adding new categories. It is nearly the same function except has more parameters.
+#the variable_customs functions job is to make the program more versatile, when adding new categories. It is nearly the same function except has more parameters.
 #the menu's custom grade will the the product of all the categories in this function added together and multiplied by the weight.
-    def customs(name,weight,amount):
+    def variable_customs(name,weight,amount):
 #print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
         for numbers in range(int(amount)):
             scores=float(input('Please provide your scores for this category one at a time '))
@@ -171,7 +171,7 @@ def custom():
                         number_custom_grades=input('Please provide the number assignments completed for this category ')
                     else:
                         counter+=1
-                        customs(custom_name,custom_weight,number_custom_grades)
+                        variable_customs(custom_name,custom_weight,number_custom_grades)
                         custom_end=sum(custom_list)
                         while counter>=int(custom_amount):
                              Menu()
