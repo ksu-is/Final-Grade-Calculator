@@ -139,7 +139,7 @@ def custom():
         custom_totalgrades=sum(custom_scores)
         custom_final=custom_totalgrades/int(amount)
         custom_final_weight=int(custom_final)*float(weigh_percentage)
-        custom_details=custom_name,'average is', custom_final, '% and is worth', custom_final_weight,'%.'
+        custom_details=custom_name,'average is', custom_final, '% and weighs', custom_final_weight,'% of your final grade.'
         custom_advance_details.append(custom_details)
         for listed in custom_advance_details:
             print(listed)
@@ -160,6 +160,7 @@ def custom():
             if custom_name.isdigit()==True:
                 print("Please use letters only")
             else:
+                #custom_scores is mentioned here again to clear the value because without it, it would just keep adding from the previous values
                 custom_scores=[]
                 custom_weight=input('Enter the weight of category ')
                 while custom_weight.isdecimal()==False:     
@@ -234,7 +235,8 @@ def Menu():
         custom()
     elif Grader=='6':
         print('Below are all the categories you added along with their grades')
-        print(custom_advance_details)
+        for details in custom_advance_details:
+            print(details)
         menu_return=input('would you like to return to the Menu? y/n? ')
         if menu_return=='y':
             Menu()
