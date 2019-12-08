@@ -236,6 +236,9 @@ def Menu():
     elif Grader=='6':
         print('Below are all the categories you added along with their grades')
         for details in custom_advance_details:
+            details=str(details)
+            details=details.replace("'","")
+            details=details.replace(",","")
             print(details)
         menu_return=input('would you like to return to the Menu? y/n? ')
         if menu_return=='y':
