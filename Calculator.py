@@ -200,7 +200,7 @@ if final_end=='':
     final_end=0
 elif final_end>-1:
     final_end=final_end
-# The codes above allows the function final grade to determine which categories to use. If the user did not insert any grade in a category, it will default to a 0    
+# The codes above allows the function final to determine which categories to use. If the user did not insert any grade in a category, it will default to a 0    
 def final():
     global final_end
     final_end=custom_end+homework_end+test_end+assignment_end+quiz_end+homework_end
