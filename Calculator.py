@@ -118,8 +118,13 @@ def homework():
                 else:
                     homework_value=[]
                     for scores in range(int(homework_amount)):
-                        homework_scores=float(input('Please insert scores one at a time '))
-                        homework_value.append(homework_scores)
+                        homework_scores=input('Please insert scores one at a time ')
+                        while homework_scores.isalpha()==True:
+                            print("Please use an integer")
+                            homework_scores=input("Please insert scores one at a time")
+                        else:
+                            homework_scores=float(homework_scores)
+                            homework_value.append(homework_scores)
                     homework_weighp=int(homework_weight)/100
                     homework_total=sum(homework_value)
                     homework_final=homework_total/int(homework_amount)
@@ -144,8 +149,13 @@ def custom():
     def variable_customs(name,weight,amount):
 #print('so the category is', name,'with a', weight, '%', 'and a total of', amount  )
         for numbers in range(int(amount)):
-            scores=float(input('Please provide your scores for this category one at a time '))
-            custom_scores.append(scores)
+            scores=input('Please provide your scores for this category one at a time ')
+            while scores.isalpha()==True:
+                print("Please us an integer")
+                scores=input('Please provide your scores for this category one at a time ')
+            else:
+                scores=float(scores)
+                custom_scores.append(scores)
         weigh_percentage=int(weight)/100
         custom_totalgrades=sum(custom_scores)
         custom_final=custom_totalgrades/int(amount)
