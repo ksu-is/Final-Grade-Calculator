@@ -32,6 +32,7 @@ def quizzes():
                             quiz_scores=input('Please insert scores one at a time ')
                         else:
                             quiz_scores=float(quiz_scores)
+#quiz_scores has to be converted into a float in order to do the calculations
                             quiz_value.append(quiz_scores)      
 #This allows the user to input grades and have the iterrated and added to a list for future reference
                     quiz_weighp=int(quiz_weight)/100
@@ -45,7 +46,7 @@ def quizzes():
 #  Multiplies the final grade of the cateogry to corresponding weight to output how much this category affects the final grade
                     print('Your quiz average was',quiz_final,"%. Your quizzes weigh", quiz_end,"% of your final grade.")
                     Menu()
-# This function is repeated for the other hardcoded categories like test and assignments
+# This function is repeated for the other hardcoded categories like test and assignments except for the custom
                     
                 
 def Test():
@@ -143,7 +144,7 @@ def custom():
     custom_scores=[]
     global custom_advance_details
     custom_advance_details=[]
-# The custom_advanced_details allows the user to view all the categories they added and their pertaining grade instead of just the average of all of them.
+# The custom_advanced_details allows the user to view all the categories they added and their pertaining grade instead of just the average of all of them on the menu.
     global custom_end
     custom_end=sum(custom_list)
 #The counters job is to signal the program to end the loop once they have entered all their categories in
@@ -186,7 +187,7 @@ def custom():
                     print("Please use letters only")
                     custom_name=input('Please provide a name for category ')
                 else:
-                    #custom_scores is mentioned here again to clear the value because without it, it would just keep adding from the previous values
+#custom_scores is mentioned here again to clear the value because without it, it would just keep adding from the previous values
                     custom_scores=[]
                     custom_weight=input('Enter the weight of category ')
                     while custom_weight.isdecimal()==False:     
@@ -265,6 +266,7 @@ def Menu():
             details=str(details)
             details=details.replace("'","")
             details=details.replace(",","")
+#These replacements allows the list to be outputted like a normal sentence without all the punctuations.
             print(details)
         menu_return=input('would you like to return to the Menu? y/n? ')
         if menu_return=='y':
