@@ -59,8 +59,13 @@ def Test():
                 else:
                     test_value=[]
                     for scores in range(int(test_amount)):
-                        test_scores=float(input('Please insert scores one at a time '))
-                        test_value.append(test_scores)
+                        test_scores=input('Please insert scores one at a time ')
+                        while test_scores.isalpha()==True:
+                            print("Please use an integer")
+                            test_scores=input('Please insert scores one at a time ')
+                        else:
+                            test_scores=float(test_scores)
+                            test_value.append(test_scores)
                     test_weighp=int(test_weight)/100
                     test_total=sum(test_value)
                     test_final=test_total/int(test_amount)
@@ -84,8 +89,13 @@ def assignments():
                 else:
                     assignment_value=[]
                     for scores in range(int(assignment_amount)):
-                        assignment_scores=float(input('Please insert scores one at a time '))
-                        assignment_value.append(assignment_scores)
+                        assignment_scores=input('Please insert scores one at a time ')
+                        while assignment_scores.isalpha()==True:
+                            print("Please use an integer")
+                            assignment_scores=input('Please insert scores one at a time ')
+                        else:
+                            assignment_scores=float(assignment_scores)
+                            assignment_value.append(assignment_scores)
                     assignment_weighp=int(assignment_weight)/100
                     assignment_total=sum(assignment_value)
                     assignment_final=assignment_total/int(assignment_amount)
