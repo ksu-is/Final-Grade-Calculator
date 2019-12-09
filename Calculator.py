@@ -168,35 +168,37 @@ def custom():
 
     
     custom_amount=input('How many custom categories would you like to add? or enter n/a to return to menu ')
-    if custom_amount=='n/a':
-        Menu()
-    elif custom_amount.isalpha()==True:
-        print('Please use a integer or decimal ')
-    else:
-        print('You will now be asked to insert information for each category one at a time\n ')
-        for numbers in range(int(custom_amount)):
-            custom_name=input('Please provide a name for category ')
-            while custom_name.isdigit()==True:
-                print("Please use letters only")
+    while custom_amount:
+        if custom_amount=='n/a':
+            Menu()
+        elif custom_amount.isalpha()==True:
+            print('Please use a integer or decimal ')
+            custom_amount=input('How many custom categories would you like to add? or enter n/a to return to menu ')
+        else:
+            print('You will now be asked to insert information for each category one at a time\n ')
+            for numbers in range(int(custom_amount)):
                 custom_name=input('Please provide a name for category ')
-            else:
-                #custom_scores is mentioned here again to clear the value because without it, it would just keep adding from the previous values
-                custom_scores=[]
-                custom_weight=input('Enter the weight of category ')
-                while custom_weight.isdecimal()==False:     
-                    print('Please use an integer')
-                    custom_weight=input('Enter the weight of category ')
+                while custom_name.isdigit()==True:
+                    print("Please use letters only")
+                    custom_name=input('Please provide a name for category ')
                 else:
-                    number_custom_grades=input('Please provide the number assignments completed for this category ')
-                    while number_custom_grades.isdecimal()==False:
+                    #custom_scores is mentioned here again to clear the value because without it, it would just keep adding from the previous values
+                    custom_scores=[]
+                    custom_weight=input('Enter the weight of category ')
+                    while custom_weight.isdecimal()==False:     
                         print('Please use an integer')
-                        number_custom_grades=input('Please provide the number assignments completed for this category ')
+                        custom_weight=input('Enter the weight of category ')
                     else:
-                        counter+=1
-                        variable_customs(custom_name,custom_weight,number_custom_grades)
-                        custom_end=sum(custom_list)
-                        while counter>=int(custom_amount):
-                             Menu()
+                        number_custom_grades=input('Please provide the number assignments completed for this category ')
+                        while number_custom_grades.isdecimal()==False:
+                            print('Please use an integer')
+                            number_custom_grades=input('Please provide the number assignments completed for this category ')
+                        else:
+                            counter+=1
+                            variable_customs(custom_name,custom_weight,number_custom_grades)
+                            custom_end=sum(custom_list)
+                            while counter>=int(custom_amount):
+                                Menu()
                                                    
 if custom_end=="":
         custom_end=0
