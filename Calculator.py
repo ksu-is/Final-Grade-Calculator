@@ -28,6 +28,7 @@ def quizzes():
                     for scores in range(int(quiz_amount)):
                         quiz_scores=float(input('Please insert scores one at a time '))
                         quiz_value.append(quiz_scores)      
+                            quiz_value.append(quiz_scores)      
 #This allows the user to input grades and have the iterrated and added to a list for future reference
                     quiz_weighp=int(quiz_weight)/100
 # Quiz_weighp converts the category weight from an integer to a float
@@ -155,8 +156,9 @@ def custom():
         print('You will now be asked to insert information for each category one at a time\n ')
         for numbers in range(int(custom_amount)):
             custom_name=input('Please provide a name for category ')
-            if custom_name.isdigit()==True:
+            while custom_name.isdigit()==True:
                 print("Please use letters only")
+                custom_name=input('Please provide a name for category ')
             else:
                 #custom_scores is mentioned here again to clear the value because without it, it would just keep adding from the previous values
                 custom_scores=[]
