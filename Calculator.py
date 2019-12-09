@@ -26,8 +26,12 @@ def quizzes():
                 else:
                     quiz_value=[]
                     for scores in range(int(quiz_amount)):
-                        quiz_scores=float(input('Please insert scores one at a time '))
-                        quiz_value.append(quiz_scores)      
+                        quiz_scores=input('Please insert scores one at a time ')
+                        while quiz_scores.isalpha()==True:
+                            print('Please use an integer')
+                            quiz_scores=input('Please insert scores one at a time ')
+                        else:
+                            quiz_scores=float(quiz_scores)
                             quiz_value.append(quiz_scores)      
 #This allows the user to input grades and have the iterrated and added to a list for future reference
                     quiz_weighp=int(quiz_weight)/100
