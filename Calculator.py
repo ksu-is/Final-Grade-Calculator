@@ -156,7 +156,7 @@ def custom():
         for numbers in range(int(amount)):
             scores=input('Please provide your scores for this category one at a time ')
             while scores.isalpha()==True:
-                print("Please us an integer")
+                print("Please use an integer")
                 scores=input('Please provide your scores for this category one at a time ')
             else:
                 scores=float(scores)
@@ -233,8 +233,47 @@ elif final_end>-1:
 def final():
     global final_end
     final_end=custom_end+homework_end+test_end+assignment_end+quiz_end+homework_end
-    print( 'Your final Grade is',final_end,'%')
-    Menu()
+    if final_end<70:
+        print("Your final grade is",final_end,"% Unfortunately you failed.")
+        while True:
+            rmenu=input("Would you like to return to menu? y/n")
+            if rmenu=="y":
+                Menu()
+            elif rmenu=="n":
+                exit()
+            else:
+                print("Please use a valid option")   
+    elif 79>=final_end>=70:
+        print("Your final grade is",final_end,"% So you passed good job!")
+        while True:
+            rmenu=input("Would you like to return to menu? y/n")
+            if rmenu=="y":
+                Menu()
+            elif rmenu=="n":
+                exit()
+            else:
+                print("Please use a valid option")       
+    elif 89>=final_end>=80:
+        print("Your final grade is",final_end,"% Good job you are above average!")
+        while True:
+            rmenu==input("Would you like to return to menu? y/n")
+            if rmenu=="y":
+                Menu()
+            elif rmenu=="n":
+                exit()
+            else:
+                print("Please use a valid option")  
+    elif final_end>=90:
+        print( 'Your final Grade is',final_end,'% Congratulations, you aced the class!')
+        while True:
+            rmenu=input("Would you like to return to menu? y/n")
+            if rmenu=="y":
+                Menu()
+            elif rmenu=="n":
+                exit()
+            else:
+                print("Please use a valid option")  
+        
 # function final is the final function that adds all the final grades together
 def Menu():
     print("Hello, welcome to the Will I fail Calculator")
