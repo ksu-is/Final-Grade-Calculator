@@ -256,7 +256,7 @@ def final():
     elif 89>=final_end>=80:
         print("Your final grade is",final_end,"% Good job you are above average!")
         while True:
-            rmenu==input("Would you like to return to menu? y/n")
+            rmenu=input("Would you like to return to menu? y/n")
             if rmenu=="y":
                 Menu()
             elif rmenu=="n":
