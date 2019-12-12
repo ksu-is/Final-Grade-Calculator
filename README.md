@@ -15,21 +15,23 @@ Hello, welcome to the Will I fail Calculator
 This program will help calculate your final grade by finding the average weight of each pertaining category of your grade
 and then adding them together to output the final grade.
 
-1: Grade Quizzes Current grade is 0 %
+1: Grade Quizzes Current weight is 0 %
 
-2: Grade Test Current grade is 0 %
+2: Grade Test Current weight is 0 %
 
-3: Grade assignments Current grade is 0 %
+3: Grade Assignments Current weight is 0 %
 
-4: Grade homework Current grade is 0 %
+4: Grade Homework Current weight is 0 %
 
-5: Grade custom Current grade is 0 %
+5: Grade Custom Current weight is 0 %
 
-6: Displays each individual custom course's grade instead of the entire average
+6: Display each individual custom course's grade instead of the entire average
 
 7: Calculate Final Grade (all other pertaining grades have to be filled before hand) Current final grade is 0 %
 
 8 Close program
+
+Please Choose a category to start with by entering any of the following numbers above and press return key to confirm
  
  ## Grading a Category
  Once a category has been chosen, the user will be asked questions concerning the category. These questions will include, what is the weight of the category, the number of assignments completed, and the input of all the grades you recieved in that category. By the end of these questions, the calculator will output the user's grade with the weight of the categoy applied.
@@ -56,7 +58,8 @@ and then adding them together to output the final grade.
  
  ### Example of Custom grading
  
-How many custom categories would you like to add? or enter n/a to return to menu 1
+How many custom categories would you like to add? or enter n/a to return to menu 2
+
 You will now be asked to insert information for each category one at a time
 
 Please provide a name for category Projects
@@ -65,21 +68,19 @@ Enter the weight of category 50
 
 Please provide the number assignments completed for this category 1
 
-so the category is Projects with a 50 % and a total of 1
-
-please provide your scores for this category one at a time 100
+Please provide your scores for this category one at a time 90
 
 ### Example of details of custom
 
 Below are all the categories you added along with their grades
 
-('Projects', 'final grade is', 50.0)
+(Projects average is 90.0 % and weighs 45.0 % of your final grade.)
 
-('Presentaions', 'final grade is', 95.0)
+(Presentations average is 95.0 % and weighs 47.5 % of your final grade.)
 
-would you like to return to the Menu? y/n? 
+would you like to return to the Menu? y/n?
 
   
  ## Calculating for Final Grade
   
-  Once the user has filled out all their categories, they will now be able to use function 7. Function 7 will calculate their final grade by adding all their final values from each category together and then outputting it to the user. Once this is finished, the program will end.
+  Once the user has filled out all their categories, they will now be able to use function 7. Function 7 will calculate their final grade by adding all their final values from each category together and then outputting their grade and a response depending on the grade they achieved in the class. They will then be asked if they would like to return to the main menu, if not the program will end.
